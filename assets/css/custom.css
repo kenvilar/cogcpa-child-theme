@@ -1,0 +1,115 @@
+.arrow-sweep-btn {
+	--size: 78px;
+	width: var(--size);
+	height: var(--size);
+	border: 0;
+	background: #017bb1; /* ✅ default bg */
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	display: grid;
+	place-items: center;
+	border-radius: 9999px;
+	-webkit-tap-highlight-color: transparent;
+	outline: none !important;
+}
+.arrow-sweep-btn:focus-visible {
+	outline: 2px solid rgba(255, 255, 255, 0.75);
+	outline-offset: 5px;
+}
+.icon {
+	width: 28px;
+	height: 28px;
+	position: relative;
+	z-index: 2;
+}
+.chev {
+	position: absolute;
+	inset: 0;
+}
+.chev--b {
+	opacity: 0;
+}
+.ring {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+	overflow: visible;
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.18));
+	opacity: 0;
+	border-radius: 50%;
+}
+/* default: FULL WHITE ring */
+.ring-base {
+	fill: none;
+	stroke: rgba(255, 255, 255, 1);
+	stroke-width: 2;
+	transition: stroke 0.25s ease;
+}
+/* animated sweep stays FULL WHITE */
+.ring-sweep {
+	fill: none;
+	stroke: rgba(255, 255, 255, 1);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+	opacity: 0;
+}
+/* on click: base ring becomes LESS WHITE (dim) */
+.arrow-sweep-btn.is-animating .ring-base {
+	stroke: rgba(255, 255, 255, 0.35);
+}
+/* sweep anim */
+.arrow-sweep-btn.is-animating .ring-sweep {
+	opacity: 1;
+	animation: drawArc 0.65s ease-out forwards;
+}
+/* arrow swap (same feel as before) */
+.arrow-sweep-btn[data-dir="left"] {
+	--out-x: -140%;
+	--in-x: 140%;
+}
+.arrow-sweep-btn[data-dir="right"] {
+	--out-x: 140%;
+	--in-x: -140%;
+}
+.arrow-sweep-btn.is-animating .chev--a {
+	animation: iconOut 1s ease forwards;
+}
+.arrow-sweep-btn.is-animating .chev--b {
+	opacity: 1;
+	animation: iconIn 1s ease 0.08s forwards;
+}
+@keyframes drawArc {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes iconOut {
+	to {
+		transform: translateX(var(--out-x));
+		opacity: 0;
+	}
+}
+@keyframes iconIn {
+	from {
+		transform: translateX(var(--in-x));
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.arrow-sweep-btn.is-animating * {
+		animation: none !important;
+	}
+	.ring-base {
+		transition: none;
+	}
+}
