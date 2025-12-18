@@ -51,7 +51,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
             }
             ?>
         </div>
-        <div class="flex flex-col w-[35%] md:w-full divide-y divide-darkblue">
+        <div class="flex flex-col w-[39%] md:w-full divide-y divide-darkblue">
             <?php
             $args = array(
 	            'post_type'      => 'post',
@@ -68,7 +68,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
                   <div class="max-w-full ml-auto w-full md:max-w-full md:ml-0">
                     <h3 class="text-xl font-normal"><?php the_title(); ?></h3>
                     <div class="mb-[10px]"></div>
-                    <p class="font-light m-0">
+                    <p class="font-light m-0" text-limit="3">
 	                    <?php echo get_the_excerpt(); ?>
                     </p>
                   </div>
