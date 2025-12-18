@@ -43,9 +43,9 @@ function myAccordion() {
 			//   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
 			// }
 
-			accordionItemHeader.classList.toggle("active");
+			accordionItemHeader.closest(".my-accordion-item").classList.toggle("active");
 			const accordionItemBody = accordionItemHeader.nextElementSibling;
-			if (accordionItemHeader.classList.contains("active")) {
+			if (accordionItemHeader.closest(".my-accordion-item").classList.contains("active")) {
 				accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
 			} else {
 				accordionItemBody.style.maxHeight = 0;
