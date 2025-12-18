@@ -24,7 +24,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
                       <div class="max-w-[320px] w-full md:max-w-full max-[768px]:order-2">
                         <h3 class="text-xl font-normal"><?php the_title(); ?></h3>
                         <div class="mb-[22px]"></div>
-                        <p class="font-light">
+                        <p class="font-light m-0">
 	                        <?php echo get_the_excerpt(); ?>
                         </p>
                         <div class="mb-[30px]"></div>
@@ -52,46 +52,32 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
             ?>
         </div>
         <div class="flex flex-col w-full divide-y divide-darkblue">
-          <a href=""
-             class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
-            <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
-              <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <div class="mb-[10px]"></div>
-              <p class="font-light m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut ...
-              </p>
-            </div>
-          </a>
-          <a href=""
-             class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
-            <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
-              <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <div class="mb-[10px]"></div>
-              <p class="font-light m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut ...
-              </p>
-            </div>
-          </a>
-          <a href=""
-             class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
-            <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
-              <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <div class="mb-[10px]"></div>
-              <p class="font-light m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut ...
-              </p>
-            </div>
-          </a>
-          <a href=""
-             class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
-            <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
-              <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <div class="mb-[10px]"></div>
-              <p class="font-light m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut ...
-              </p>
-            </div>
-          </a>
+            <?php
+            $args = array(
+	            'post_type'      => 'post',
+	            'posts_per_page' => 4,
+              'offset'         => 2,
+            );
+            $posts = new WP_Query( $args );
+            if ( $posts->have_posts() ) {
+	            while ( $posts->have_posts() ) {
+		            $posts->the_post();
+		            ?>
+                <a href="<?php the_permalink(); ?>"
+                   class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
+                  <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
+                    <h3 class="text-xl font-normal"><?php the_title(); ?></h3>
+                    <div class="mb-[10px]"></div>
+                    <p class="font-light m-0">
+	                    <?php echo get_the_excerpt(); ?>
+                    </p>
+                  </div>
+                </a>
+		            <?php
+	            }
+	            wp_reset_postdata();
+            }
+            ?>
         </div>
       </div>
 		<?php
