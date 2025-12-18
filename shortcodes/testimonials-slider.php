@@ -58,6 +58,10 @@ if ( ! function_exists( 'testimonials_slider_shortcode' ) ) {
 							width: auto;
 							fill: none;
 						}
+            .testimonials-slider {
+              display: flex;
+              flex-wrap: nowrap;
+            }
           </style>
           <div id="testimonials-slider" class="splide" role="group" aria-label="Testimonials Slider">
             <div class="splide__track">
