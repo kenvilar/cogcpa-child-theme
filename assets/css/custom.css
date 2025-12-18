@@ -1,3 +1,6 @@
+/*!**/
+/*button animation*/
+/**!*/
 .arrow-sweep-btn {
 	--size: 78px;
 	width: var(--size);
@@ -112,4 +115,29 @@
 	.ring-base {
 		transition: none;
 	}
+}
+/*!**/
+/*accordion*/
+/**!*/
+.my-accordion > div > div > .vce-row-container:not(:last-child) {
+	border-bottom: 1px solid white;
+}
+.my-accordion-item-header {
+	cursor: pointer;
+	padding-block: 11px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+.my-accordion-item.active .my-accordion-item-header {
+	background-color: #017bb1;
+	top: -1px;
+}
+.my-accordion-item-body {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.my-accordion-item-body-content {
+	padding-block: 23px;
+	padding-left: 15px;
 }
