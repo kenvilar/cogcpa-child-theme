@@ -132,7 +132,7 @@
 	background-color: #017bb1;
 	top: -1px;
 }
-.my-accordion-item-body {
+body:not(.vcwb-editor-body) .my-accordion-item-body {
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
