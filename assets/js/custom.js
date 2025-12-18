@@ -9,7 +9,7 @@ function buttonRingSweepAnimation() {
 				if (btn.classList.contains("is-animating")) return;
 
 				btn.classList.add("is-animating");
-				btn_ring.style.opacity = "1";
+				// btn_ring.style.opacity = "1";
 
 				// restart sweep animations cleanly
 				sweeps.forEach((p) => {
@@ -20,7 +20,7 @@ function buttonRingSweepAnimation() {
 
 				setTimeout(() => {
 					btn.classList.remove("is-animating");
-					btn_ring.style.opacity = "0";
+					// btn_ring.style.opacity = "0";
 				}, DURATION_MS);
 			});
 		});
