@@ -72,11 +72,11 @@ if ( ! function_exists( 'testimonials_slider_shortcode' ) ) {
               <button class="splide__arrow splide__arrow--prev arrow-sweep-btn" data-dir="left" aria-label="Previous">
                 <span class="icon" aria-hidden="true">
                   <svg class="chev chev--a" viewBox="0 0 24 24">
-                    <path d="M15 6L9 12l6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    <path d="M15 6L9 12l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                           stroke-linejoin="round"/>
                   </svg>
                   <svg class="chev chev--b" viewBox="0 0 24 24">
-                    <path d="M15 6L9 12l6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    <path d="M15 6L9 12l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                           stroke-linejoin="round"/>
                   </svg>
                 </span>
@@ -91,11 +91,11 @@ if ( ! function_exists( 'testimonials_slider_shortcode' ) ) {
               <button class="splide__arrow splide__arrow--next arrow-sweep-btn" data-dir="right" aria-label="Next">
                 <span class="icon" aria-hidden="true">
                   <svg class="chev chev--a" viewBox="0 0 24 24">
-                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                           stroke-linejoin="round"/>
                   </svg>
                   <svg class="chev chev--b" viewBox="0 0 24 24">
-                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                           stroke-linejoin="round"/>
                   </svg>
                 </span>
