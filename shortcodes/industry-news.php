@@ -5,8 +5,8 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
 		ob_start();
 
 		?>
-      <div class="grid grid-cols-[1070fr_370fr] divide-x divide-darkblue md:grid-cols-1 md:divide-y md:divide-darkblue">
-        <div class="flex flex-col w-full divide-y divide-darkblue">
+      <div class="flex max-[480px]:flex-col divide-x divide-darkblue md:grid-cols-1 xs:divide-y xs:divide-darkblue">
+        <div class="flex flex-col w-[75] md:w-full divide-y divide-darkblue">
             <?php
             $args = array(
 	            'post_type'      => 'post',
@@ -51,7 +51,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
             }
             ?>
         </div>
-        <div class="flex flex-col w-full divide-y divide-darkblue">
+        <div class="flex flex-col w-[35%] md:w-full divide-y divide-darkblue">
             <?php
             $args = array(
 	            'post_type'      => 'post',
@@ -65,7 +65,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
 		            ?>
                 <a href="<?php the_permalink(); ?>"
                    class="text-inherit! block py-[27px] pl-[27px] pr-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
-                  <div class="max-w-[317px] ml-auto w-full md:max-w-full md:ml-0">
+                  <div class="max-w-full ml-auto w-full md:max-w-full md:ml-0">
                     <h3 class="text-xl font-normal"><?php the_title(); ?></h3>
                     <div class="mb-[10px]"></div>
                     <p class="font-light m-0">
