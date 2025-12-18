@@ -11,7 +11,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
              class="text-inherit! h-full block py-[27px] pr-[20px] pl-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
             <div class="max-w-[940px] w-full md:max-w-full">
               <div class="flex flex-row items-center gap-[27px] max-[768px]:flex-col!">
-                <div class="max-w-[320px] w-full md:max-w-full">
+                <div class="max-w-[320px] w-full md:max-w-full max-[768px]:order-2">
                   <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                   <div class="mb-[22px]"></div>
                   <p class="font-light">
@@ -39,7 +39,7 @@ if ( ! function_exists( 'industry_news_shortcode' ) ) {
              class="text-inherit! h-full block py-[27px] pr-[20px] pl-[max(1.5rem,calc((100vw-1236px)/2))] bg-white transition-colors hover:bg-lightgrey!">
             <div class="max-w-[940px] w-full md:max-w-full">
               <div class="flex flex-row items-center gap-[27px] max-[768px]:flex-col!">
-                <div class="max-w-[320px] w-full md:max-w-full">
+                <div class="max-w-[320px] w-full md:max-w-full max-[768px]:order-2">
                   <h3 class="text-xl font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
                   <div class="mb-[22px]"></div>
                   <p class="font-light">
