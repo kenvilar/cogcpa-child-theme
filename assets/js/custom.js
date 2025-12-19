@@ -96,6 +96,25 @@ function textLimiter() {
 	});
 }
 
+function divElementClickable() {
+	document.addEventListener("DOMContentLoaded", (event) => {
+		function divBlockClickable() {
+			document.addEventListener("click", (e) => {
+				const block = e.target.closest(".js-redirect-block, [data-href]");
+				if (!block) return;
+
+				const url = block.getAttribute("data-href");
+				const target = block.getAttribute("data-target") || "_self";
+
+				if (url) window.open(url, target);
+			});
+		}
+
+		divBlockClickable();
+	});
+}
+
 buttonRingSweepAnimation();
 myAccordion();
 textLimiter();
+divElementClickable();
