@@ -19,20 +19,20 @@ function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
   $cats     = get_the_category( $post_id );
   $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
 
-  $month = get_the_date( 'M', $post_id );
+  $month = get_the_date( 'F', $post_id );
   $day   = get_the_date( 'd', $post_id );
 
   ob_start();
   ?>
   <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
-     class="cogcpa-blog-card"
+     class="cogcpa-blog-card group"
      data-post-id="<?= esc_attr( $post_id ); ?>">
     <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
     <div class="cogcpa-blog-card__meta">
         <span class="cogcpa-blog-card__date">
           <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
           <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
-        </span>
+        </span> |
       <?php
       if ( ! empty( $cat_name ) ) : ?>
         <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
@@ -41,7 +41,16 @@ function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
     </div>
     <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
     <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
-    <div class="cogcpa-blog-card__more">Read More</div>
+    <div class="cogcpa-blog-card__more">
+      <div>Read More</div>
+      <div class="transition-all group-hover:translate-x-[2px]" style="display: flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
+          <path
+            d="M16.7659 6.69749C17.078 7.05742 17.078 7.63944 16.7659 7.99554L11.1884 14.4322C10.8763 14.7921 10.3716 14.7921 10.0629 14.4322C9.75413 14.0723 9.75081 13.4902 10.0629 13.1341L14.2793 8.26741H0.796797C0.355238 8.26741 0 7.8577 0 7.34843C0 6.83917 0.355238 6.42946 0.796797 6.42946H14.2793L10.0596 1.56656C9.74749 1.20663 9.74749 0.624616 10.0596 0.268514C10.3716 -0.0875877 10.8763 -0.0914167 11.185 0.268514L16.7659 6.69749Z"
+            fill="#017BB1"/>
+        </svg>
+      </div>
+    </div>
   </a>
   <?php
 
