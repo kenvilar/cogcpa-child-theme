@@ -8,80 +8,80 @@
  * [cogcpa_blog_cards initial="12" more="6"]
  */
 function cogcpamedia_blog_cards_shortcode( $atts ) {
-	$atts = shortcode_atts(
-		array(
-			'initial'    => 12,
-			'more'       => 6,
-			'image_size' => 'large',
-		),
-		$atts,
-		'cogcpa_blog_cards'
-	);
+  $atts = shortcode_atts(
+    array(
+      'initial'    => 12,
+      'more'       => 6,
+      'image_size' => 'large',
+    ),
+    $atts,
+    'cogcpa_blog_cards'
+  );
 
-	$initial = max( 1, intval( $atts['initial'] ) );
-	$more    = max( 1, intval( $atts['more'] ) );
+  $initial = max( 1, intval( $atts['initial'] ) );
+  $more    = max( 1, intval( $atts['more'] ) );
 
-	// Get latest post ID (to exclude from the cards list)
-	$latest    = get_posts( array(
-		'post_type'      => 'post',
-		'posts_per_page' => 1,
-		'fields'         => 'ids',
-		'orderby'        => 'date',
-		'order'          => 'DESC',
-	) );
-	$latest_id = ! empty( $latest ) ? intval( $latest[0] ) : 0;
+  // Get latest post ID (to exclude from the cards list)
+  $latest    = get_posts( array(
+    'post_type'      => 'post',
+    'posts_per_page' => 1,
+    'fields'         => 'ids',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ) );
+  $latest_id = ! empty( $latest ) ? intval( $latest[0] ) : 0;
 
-	// Categories for filter UI
-	$categories = get_categories( array(
-		'taxonomy'   => 'category',
-		'hide_empty' => true,
-	) );
+  // Categories for filter UI
+  $categories = get_categories( array(
+    'taxonomy'   => 'category',
+    'hide_empty' => true,
+  ) );
 
-	// Initial query (show first 12 cards, excluding the latest post)
-	$args = array(
-		'post_type'           => 'post',
-		'post_status'         => 'publish',
-		'orderby'             => 'date',
-		'order'               => 'DESC',
-		'posts_per_page'      => $initial + 1, // +1 to detect "has more"
-		'offset'              => 1,            // skip the latest post
-		'ignore_sticky_posts' => 1,
-	);
-	if ( $latest_id ) {
-		$args['post__not_in'] = array( $latest_id );
-	}
+  // Initial query (show first 12 cards, excluding the latest post)
+  $args = array(
+    'post_type'           => 'post',
+    'post_status'         => 'publish',
+    'orderby'             => 'date',
+    'order'               => 'DESC',
+    'posts_per_page'      => $initial + 1, // +1 to detect "has more"
+    'offset'              => 1,            // skip the latest post
+    'ignore_sticky_posts' => 1,
+  );
+  if ( $latest_id ) {
+    $args['post__not_in'] = array( $latest_id );
+  }
 
-	$q = new WP_Query( $args );
+  $q = new WP_Query( $args );
 
-	$posts_to_render = array();
-	$has_more        = false;
+  $posts_to_render = array();
+  $has_more        = false;
 
-	if ( $q->have_posts() ) {
-		foreach ( $q->posts as $p ) {
-			$posts_to_render[] = $p;
-		}
-		if ( count( $posts_to_render ) > $initial ) {
-			$has_more        = true;
-			$posts_to_render = array_slice( $posts_to_render, 0, $initial );
-		}
-	}
+  if ( $q->have_posts() ) {
+    foreach ( $q->posts as $p ) {
+      $posts_to_render[] = $p;
+    }
+    if ( count( $posts_to_render ) > $initial ) {
+      $has_more        = true;
+      $posts_to_render = array_slice( $posts_to_render, 0, $initial );
+    }
+  }
 
-	$nonce = wp_create_nonce( 'cogcpa_blog_cards_nonce' );
+  $nonce = wp_create_nonce( 'cogcpa_blog_cards_nonce' );
 
-	ob_start();
-	?>
+  ob_start();
+  ?>
   <div
     class="cogcpa-blog-cards"
     data-ajaxurl="<?php
-	echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>"
+    echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>"
     data-nonce="<?php
-	echo esc_attr( $nonce ); ?>"
+    echo esc_attr( $nonce ); ?>"
     data-initial="<?php
-	echo esc_attr( $initial ); ?>"
+    echo esc_attr( $initial ); ?>"
     data-more="<?php
-	echo esc_attr( $more ); ?>"
+    echo esc_attr( $more ); ?>"
     data-loaded="<?php
-	echo esc_attr( count( $posts_to_render ) ); ?>"
+    echo esc_attr( count( $posts_to_render ) ); ?>"
   >
     <div class="cogcpa-blog-cards__controls">
       <div class="cogcpa-blog-cards__search">
@@ -89,65 +89,65 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
       </div>
       <div class="cogcpa-blog-cards__categories">
         <button type="button" class="cogcpa-blog-cards__cat is-active" data-cat="0">All</button>
-		  <?php
-		  foreach ( $categories as $cat ) : ?>
-            <button type="button"
-                    class="cogcpa-blog-cards__cat"
-                    data-cat="<?php
-			        echo esc_attr( intval( $cat->term_id ) ); ?>"
-            >
-				<?php
-				echo esc_html( $cat->name ); ?>
-            </button>
-		  <?php
-		  endforeach; ?>
+        <?php
+        foreach ( $categories as $cat ) : ?>
+          <button type="button"
+                  class="cogcpa-blog-cards__cat"
+                  data-cat="<?php
+                  echo esc_attr( intval( $cat->term_id ) ); ?>"
+          >
+            <?php
+            echo esc_html( $cat->name ); ?>
+          </button>
+        <?php
+        endforeach; ?>
       </div>
     </div>
     <div class="cogcpa-blog-cards__grid">
-		<?php
-		foreach ( $posts_to_render as $post_obj ) {
-			$post_id = $post_obj->ID;
+      <?php
+      foreach ( $posts_to_render as $post_obj ) {
+        $post_id = $post_obj->ID;
 
-			$img_html = '';
-			if ( has_post_thumbnail( $post_id ) ) {
-				$img_html = get_the_post_thumbnail( $post_id, $atts['image_size'], array(
-					'class'   => 'cogcpa-blog-cards__image',
-					'loading' => 'lazy',
-				) );
-			}
+        $img_html = '';
+        if ( has_post_thumbnail( $post_id ) ) {
+          $img_html = get_the_post_thumbnail( $post_id, $atts['image_size'], array(
+            'class'   => 'cogcpa-blog-cards__image',
+            'loading' => 'lazy',
+          ) );
+        }
 
-			$cats     = get_the_category( $post_id );
-			$cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
+        $cats     = get_the_category( $post_id );
+        $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
 
-			$month = get_the_date( 'M', $post_id );
-			$day   = get_the_date( 'd', $post_id );
-			?>
-          <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
-             class="cogcpa-blog-card"
-             data-post-id="<?= esc_attr( $post_id ); ?>">
-            <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
-            <div class="cogcpa-blog-card__meta">
+        $month = get_the_date( 'M', $post_id );
+        $day   = get_the_date( 'd', $post_id );
+        ?>
+        <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
+           class="cogcpa-blog-card"
+           data-post-id="<?= esc_attr( $post_id ); ?>">
+          <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
+          <div class="cogcpa-blog-card__meta">
               <span class="cogcpa-blog-card__date">
                 <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
                 <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
               </span>
-              <?php
-              if ( ! empty( $cat_name ) ) : ?>
-                <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
-              <?php
-              endif; ?>
-            </div>
-            <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
-            <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
-            <div class="cogcpa-blog-card__more">Read More</div>
-          </a>
-			<?php
-		}
-		?>
+            <?php
+            if ( ! empty( $cat_name ) ) : ?>
+              <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
+            <?php
+            endif; ?>
+          </div>
+          <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
+          <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
+          <div class="cogcpa-blog-card__more">Read More</div>
+        </a>
+        <?php
+      }
+      ?>
     </div>
     <div class="cogcpa-blog-cards__footer">
       <button type="button" class="cogcpa-blog-cards__more-btn" <?php
-	  echo $has_more ? '' : 'style="display:none"'; ?>>
+      echo $has_more ? '' : 'style="display:none"'; ?>>
         More
       </button>
     </div>
@@ -263,11 +263,11 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
 
 		})(jQuery);
   </script>
-	<?php
+  <?php
 
-	wp_reset_postdata();
+  wp_reset_postdata();
 
-	return ob_get_clean();
+  return ob_get_clean();
 }
 
 add_shortcode( 'cogcpa_blog_cards', 'cogcpamedia_blog_cards_shortcode' );
@@ -276,107 +276,107 @@ add_shortcode( 'cogcpa_blog_cards', 'cogcpamedia_blog_cards_shortcode' );
  * AJAX: load more / filter / search blog cards
  */
 function cogcpamedia_ajax_load_more_blog_cards() {
-	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'cogcpa_blog_cards_nonce' ) ) {
-		wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
-	}
+  if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'cogcpa_blog_cards_nonce' ) ) {
+    wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
+  }
 
-	$loaded   = isset( $_POST['loaded'] ) ? max( 0, intval( $_POST['loaded'] ) ) : 0;
-	$per_page = isset( $_POST['per_page'] ) ? max( 1, intval( $_POST['per_page'] ) ) : 6;
-	$cat      = isset( $_POST['cat'] ) ? intval( $_POST['cat'] ) : 0;
-	$s        = isset( $_POST['s'] ) ? sanitize_text_field( $_POST['s'] ) : '';
+  $loaded   = isset( $_POST['loaded'] ) ? max( 0, intval( $_POST['loaded'] ) ) : 0;
+  $per_page = isset( $_POST['per_page'] ) ? max( 1, intval( $_POST['per_page'] ) ) : 6;
+  $cat      = isset( $_POST['cat'] ) ? intval( $_POST['cat'] ) : 0;
+  $s        = isset( $_POST['s'] ) ? sanitize_text_field( $_POST['s'] ) : '';
 
-	// Latest post ID (exclude always)
-	$latest    = get_posts( array(
-		'post_type'      => 'post',
-		'posts_per_page' => 1,
-		'fields'         => 'ids',
-		'orderby'        => 'date',
-		'order'          => 'DESC',
-	) );
-	$latest_id = ! empty( $latest ) ? intval( $latest[0] ) : 0;
+  // Latest post ID (exclude always)
+  $latest    = get_posts( array(
+    'post_type'      => 'post',
+    'posts_per_page' => 1,
+    'fields'         => 'ids',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ) );
+  $latest_id = ! empty( $latest ) ? intval( $latest[0] ) : 0;
 
-	$args = array(
-		'post_type'           => 'post',
-		'post_status'         => 'publish',
-		'orderby'             => 'date',
-		'order'               => 'DESC',
-		'posts_per_page'      => $per_page + 1,        // +1 to detect "has more"
-		'offset'              => 1 + $loaded,          // always skip the latest, then skip already-loaded
-		'ignore_sticky_posts' => 1,
-	);
+  $args = array(
+    'post_type'           => 'post',
+    'post_status'         => 'publish',
+    'orderby'             => 'date',
+    'order'               => 'DESC',
+    'posts_per_page'      => $per_page + 1,        // +1 to detect "has more"
+    'offset'              => 1 + $loaded,          // always skip the latest, then skip already-loaded
+    'ignore_sticky_posts' => 1,
+  );
 
-	if ( $latest_id ) {
-		$args['post__not_in'] = array( $latest_id );
-	}
-	if ( $cat > 0 ) {
-		$args['cat'] = $cat;
-	}
-	if ( ! empty( $s ) ) {
-		$args['s'] = $s;
-	}
+  if ( $latest_id ) {
+    $args['post__not_in'] = array( $latest_id );
+  }
+  if ( $cat > 0 ) {
+    $args['cat'] = $cat;
+  }
+  if ( ! empty( $s ) ) {
+    $args['s'] = $s;
+  }
 
-	$q = new WP_Query( $args );
+  $q = new WP_Query( $args );
 
-	$posts_to_render = array();
-	$has_more        = false;
+  $posts_to_render = array();
+  $has_more        = false;
 
-	if ( $q->have_posts() ) {
-		$posts_to_render = $q->posts;
-		if ( count( $posts_to_render ) > $per_page ) {
-			$has_more        = true;
-			$posts_to_render = array_slice( $posts_to_render, 0, $per_page );
-		}
-	}
+  if ( $q->have_posts() ) {
+    $posts_to_render = $q->posts;
+    if ( count( $posts_to_render ) > $per_page ) {
+      $has_more        = true;
+      $posts_to_render = array_slice( $posts_to_render, 0, $per_page );
+    }
+  }
 
-	ob_start();
-	foreach ( $posts_to_render as $post_obj ) {
-		$post_id = $post_obj->ID;
+  ob_start();
+  foreach ( $posts_to_render as $post_obj ) {
+    $post_id = $post_obj->ID;
 
-		$img_html = '';
-		if ( has_post_thumbnail( $post_id ) ) {
-			$img_html = get_the_post_thumbnail( $post_id, 'large', array(
-				'class'   => 'cogcpa-blog-cards__image',
-				'loading' => 'lazy',
-			) );
-		}
+    $img_html = '';
+    if ( has_post_thumbnail( $post_id ) ) {
+      $img_html = get_the_post_thumbnail( $post_id, 'large', array(
+        'class'   => 'cogcpa-blog-cards__image',
+        'loading' => 'lazy',
+      ) );
+    }
 
-		$cats     = get_the_category( $post_id );
-		$cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
+    $cats     = get_the_category( $post_id );
+    $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
 
-		$month = get_the_date( 'M', $post_id );
-		$day   = get_the_date( 'd', $post_id );
-		?>
-      <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
-         class="cogcpa-blog-card"
-         data-post-id="<?= esc_attr( $post_id ); ?>">
-        <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
-        <div class="cogcpa-blog-card__meta">
+    $month = get_the_date( 'M', $post_id );
+    $day   = get_the_date( 'd', $post_id );
+    ?>
+    <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
+       class="cogcpa-blog-card"
+       data-post-id="<?= esc_attr( $post_id ); ?>">
+      <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
+      <div class="cogcpa-blog-card__meta">
           <span class="cogcpa-blog-card__date">
             <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
             <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
           </span>
-          <?php
-          if ( ! empty( $cat_name ) ) : ?>
-            <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
-          <?php
-          endif; ?>
-        </div>
-        <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
-        <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
-        <div class="cogcpa-blog-card__more">Read More</div>
-      </a>
-		<?php
-	}
-	$html = ob_get_clean();
+        <?php
+        if ( ! empty( $cat_name ) ) : ?>
+          <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
+        <?php
+        endif; ?>
+      </div>
+      <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
+      <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
+      <div class="cogcpa-blog-card__more">Read More</div>
+    </a>
+    <?php
+  }
+  $html = ob_get_clean();
 
-	wp_reset_postdata();
+  wp_reset_postdata();
 
-	wp_send_json_success( array(
-		'html'         => $html,
-		'loaded'       => count( $posts_to_render ),
-		'loaded_total' => $loaded + count( $posts_to_render ),
-		'has_more'     => $has_more,
-	) );
+  wp_send_json_success( array(
+    'html'         => $html,
+    'loaded'       => count( $posts_to_render ),
+    'loaded_total' => $loaded + count( $posts_to_render ),
+    'has_more'     => $has_more,
+  ) );
 }
 
 add_action( 'wp_ajax_cogcpamedia_load_more_blog_cards', 'cogcpamedia_ajax_load_more_blog_cards' );
