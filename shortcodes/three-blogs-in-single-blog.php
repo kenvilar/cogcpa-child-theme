@@ -82,8 +82,8 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
   <style>
 
   </style>
-  <div class="cogcpa-blog-cards">
-    <div class="cogcpa-blog-cards__grid">
+  <div class="single-blog-cogcpa-blog-cards">
+    <div class="single-blog-cogcpa-blog-cards__grid">
       <?php
       foreach ( $posts_to_render as $post_obj ) {
         echo cogcpamedia_render_blog_card_three_blogs( $post_obj->ID, $atts['image_size'] );
