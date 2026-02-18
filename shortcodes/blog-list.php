@@ -240,6 +240,40 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
 			justify-content: center;
 			padding-top: 40px;
 		}
+		@media screen and (max-width: 767px) {
+			.cogcpa-blog-cards__controls {
+				.cogcpa-blog-cards__categories {
+					flex-wrap: wrap;
+					gap: 20px;
+					justify-content: center;
+				}
+			}
+			.cogcpa-blog-cards__grid {
+				display: flex;
+				flex-direction: column;
+				padding-inline: 0;
+				.cogcpa-blog-card {
+					padding-inline: 32px;
+					&:nth-child(3n + 1) {
+						margin-inline: 0;
+						border-right: 0;
+					}
+					&:nth-child(3n + 2) {
+						border-right: 0;
+					}
+					&:nth-child(3n + 3) {
+						margin-inline: 0;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 479px) {
+			.cogcpa-blog-cards__grid {
+				.cogcpa-blog-card {
+					padding-block: 20px;
+				}
+			}
+		}
   </style>
   <div
     class="cogcpa-blog-cards"
@@ -256,7 +290,7 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
   >
     <div class="cogcpa-blog-cards__controls site-padding pt-[21px] pb-[14px]">
       <div class="max-w-[1236px] mx-auto">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between gap-[20px] max-[992px]:flex-col">
           <div class="cogcpa-blog-cards__categories">
             <button type="button" class="cogcpa-blog-cards__cat is-active" data-cat="0">All</button>
             <?php
