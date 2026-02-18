@@ -7,6 +7,47 @@
  * Optional params (if you want different counts):
  * [cogcpa_blog_cards initial="12" more="6"]
  */
+function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
+  $img_html = '';
+  if ( has_post_thumbnail( $post_id ) ) {
+    $img_html = get_the_post_thumbnail( $post_id, $image_size, array(
+      'class'   => 'cogcpa-blog-cards__image',
+      'loading' => 'lazy',
+    ) );
+  }
+
+  $cats     = get_the_category( $post_id );
+  $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
+
+  $month = get_the_date( 'M', $post_id );
+  $day   = get_the_date( 'd', $post_id );
+
+  ob_start();
+  ?>
+  <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
+     class="cogcpa-blog-card"
+     data-post-id="<?= esc_attr( $post_id ); ?>">
+    <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
+    <div class="cogcpa-blog-card__meta">
+        <span class="cogcpa-blog-card__date">
+          <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
+          <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
+        </span>
+      <?php
+      if ( ! empty( $cat_name ) ) : ?>
+        <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
+      <?php
+      endif; ?>
+    </div>
+    <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
+    <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
+    <div class="cogcpa-blog-card__more">Read More</div>
+  </a>
+  <?php
+
+  return ob_get_clean();
+}
+
 function cogcpamedia_blog_cards_shortcode( $atts ) {
   $atts = shortcode_atts(
     array(
@@ -106,42 +147,7 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
     <div class="cogcpa-blog-cards__grid">
       <?php
       foreach ( $posts_to_render as $post_obj ) {
-        $post_id = $post_obj->ID;
-
-        $img_html = '';
-        if ( has_post_thumbnail( $post_id ) ) {
-          $img_html = get_the_post_thumbnail( $post_id, $atts['image_size'], array(
-            'class'   => 'cogcpa-blog-cards__image',
-            'loading' => 'lazy',
-          ) );
-        }
-
-        $cats     = get_the_category( $post_id );
-        $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
-
-        $month = get_the_date( 'M', $post_id );
-        $day   = get_the_date( 'd', $post_id );
-        ?>
-        <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
-           class="cogcpa-blog-card"
-           data-post-id="<?= esc_attr( $post_id ); ?>">
-          <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
-          <div class="cogcpa-blog-card__meta">
-              <span class="cogcpa-blog-card__date">
-                <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
-                <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
-              </span>
-            <?php
-            if ( ! empty( $cat_name ) ) : ?>
-              <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
-            <?php
-            endif; ?>
-          </div>
-          <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
-          <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
-          <div class="cogcpa-blog-card__more">Read More</div>
-        </a>
-        <?php
+        echo cogcpamedia_render_blog_card( $post_obj->ID, $atts['image_size'] );
       }
       ?>
     </div>
@@ -330,42 +336,7 @@ function cogcpamedia_ajax_load_more_blog_cards() {
 
   ob_start();
   foreach ( $posts_to_render as $post_obj ) {
-    $post_id = $post_obj->ID;
-
-    $img_html = '';
-    if ( has_post_thumbnail( $post_id ) ) {
-      $img_html = get_the_post_thumbnail( $post_id, 'large', array(
-        'class'   => 'cogcpa-blog-cards__image',
-        'loading' => 'lazy',
-      ) );
-    }
-
-    $cats     = get_the_category( $post_id );
-    $cat_name = ( ! empty( $cats ) && ! empty( $cats[0] ) ) ? $cats[0]->name : '';
-
-    $month = get_the_date( 'M', $post_id );
-    $day   = get_the_date( 'd', $post_id );
-    ?>
-    <a href="<?= esc_url( get_permalink( $post_id ) ); ?>"
-       class="cogcpa-blog-card"
-       data-post-id="<?= esc_attr( $post_id ); ?>">
-      <div class="cogcpa-blog-card__thumb"><?= $img_html; ?></div>
-      <div class="cogcpa-blog-card__meta">
-          <span class="cogcpa-blog-card__date">
-            <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
-            <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
-          </span>
-        <?php
-        if ( ! empty( $cat_name ) ) : ?>
-          <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
-        <?php
-        endif; ?>
-      </div>
-      <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
-      <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
-      <div class="cogcpa-blog-card__more">Read More</div>
-    </a>
-    <?php
+    echo cogcpamedia_render_blog_card( $post_obj->ID );
   }
   $html = ob_get_clean();
 
