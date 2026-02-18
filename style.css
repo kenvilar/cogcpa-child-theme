@@ -14,3 +14,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cogcpa
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+:root {
+	--cogcpa-dark-blue: #1E3348;
+	--cogpca-blue: #017BB1;
+	--cogpcpa-light-grey: #EFEFEF;
+}
