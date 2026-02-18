@@ -96,7 +96,7 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
     'orderby'             => 'date',
     'order'               => 'DESC',
     'posts_per_page'      => $initial + 1, // +1 to detect "has more"
-    'offset'              => 1,            // skip the latest post
+    'offset'              => 0,            // already exclude latest via post__not_in
     'ignore_sticky_posts' => 1,
   );
   if ( $latest_id ) {
@@ -477,7 +477,7 @@ function cogcpamedia_ajax_load_more_blog_cards() {
     'orderby'             => 'date',
     'order'               => 'DESC',
     'posts_per_page'      => $per_page + 1,        // +1 to detect "has more"
-    'offset'              => 1 + $loaded,          // always skip the latest, then skip already-loaded
+    'offset'              => $loaded,              // already exclude latest via post__not_in
     'ignore_sticky_posts' => 1,
   );
 
