@@ -41,6 +41,26 @@ $day   = get_the_date( 'd', $post->ID );
 			inset: 0;
 			background-image: linear-gradient(135deg, #1E3348 0%, rgba(30, 51, 72, 0) 100%);
 		}
+		.single-blog-first-column {
+			padding-left: var(--side);
+			border-right: 1px solid var(--cogcpa-dark-blue);
+			width: calc(50% + 265px) !important;
+			flex: none !important;
+		}
+		.single-blog-second-column {
+		}
+		@media screen and (max-width: 991px) {
+			.single-blog-first-column,
+			.single-blog-second-column {
+				width: 100% !important;
+			}
+			.single-blog-first-column {
+				padding-inline: 32px;
+				border-right: 0;
+			}
+		}
+		@media screen and (max-width: 479px) {
+		}
   </style>
   <section class="section">
     <div

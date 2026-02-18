@@ -80,6 +80,61 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
   ob_start();
   ?>
   <style>
+		.single-blog-cogcpa-blog-cards__grid {
+			display: flex;
+			flex-direction: column;
+			.cogcpa-blog-card {
+				padding-block: 40px;
+				padding-left: 40px;
+				padding-right: var(--side);
+				color: var(--cogcpa-dark-blue);
+				&:not(:last-child) {
+					border-bottom: 1px solid var(--cogcpa-dark-blue);
+				}
+				&:hover {
+					background: var(--cogcpa-light-grey) !important;
+				}
+				.cogcpa-blog-card__thumb {
+					width: 100%;
+					height: 176px;
+					margin-bottom: 29px;
+					background: var(--cogcpa-dark-blue);
+				}
+				.cogcpa-blog-card__thumb img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+				.cogcpa-blog-card__meta {
+					font-size: 11px;
+					line-height: normal;
+					font-weight: 400;
+					color: var(--cogcpa-blue);
+					margin-bottom: 14px;
+				}
+				.cogcpa-blog-card__title {
+					font-weight: 400;
+					font-size: 17px;
+					line-height: normal;
+					margin-bottom: 17px;
+				}
+				.cogcpa-blog-card__excerpt {
+					font-weight: 300;
+					font-size: 13.68px;
+					line-height: normal;
+					margin-bottom: 36px;
+				}
+				.cogcpa-blog-card__more {
+					display: flex;
+					align-items: center;
+					gap: 9px;
+					font-weight: 600;
+					font-size: 13.68px;
+					letter-spacing: 1.28px;
+					text-transform: uppercase;
+				}
+			}
+		}
   </style>
   <div class="single-blog-cogcpa-blog-cards">
     <div class="single-blog-cogcpa-blog-cards__grid">
