@@ -32,7 +32,8 @@ function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
         <span class="cogcpa-blog-card__date">
           <span class="cogcpa-blog-card__month"><?= esc_html( $month ); ?></span>
           <span class="cogcpa-blog-card__day"><?= esc_html( $day ); ?></span>
-        </span> |
+        </span>
+      |
       <?php
       if ( ! empty( $cat_name ) ) : ?>
         <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
@@ -40,7 +41,7 @@ function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
       endif; ?>
     </div>
     <h3 class="cogcpa-blog-card__title"><?= esc_html( get_the_title( $post_id ) ); ?></h3>
-    <div class="cogcpa-blog-card__excerpt"><?= esc_html( get_the_excerpt( $post_id ) ); ?></div>
+    <div class="cogcpa-blog-card__excerpt" text-limit="6"><?= esc_html( wp_trim_words(get_the_excerpt( $post_id ), 20) ); ?></div>
     <div class="cogcpa-blog-card__more">
       <div>Read More</div>
       <div class="transition-all group-hover:translate-x-[2px]" style="display: flex">
@@ -161,10 +162,12 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
       ?>
     </div>
     <div class="cogcpa-blog-cards__footer">
-      <button type="button" class="cogcpa-blog-cards__more-btn" <?php
-      echo $has_more ? '' : 'style="display:none"'; ?>>
-        More
-      </button>
+      <div class="btn_primary">
+        <button type="button" class="cogcpa-blog-cards__more-btn" <?php
+        echo $has_more ? '' : 'style="display:none"'; ?>>
+          More
+        </button>
+      </div>
     </div>
   </div>
   <script type="text/javascript">
