@@ -62,8 +62,9 @@ $day   = get_the_date( 'd', $post->ID );
               endif; ?>
             </div>
             <div class="mb-[17px]"></div>
-            <h3
-              class="font-normal! text-[50px]! leading-[normal]! max-[768px]:text-[36px]!"><?= esc_html( get_the_title( $post->ID ) ); ?></h3>
+            <h3 class="font-normal! text-[50px]! leading-[normal]! max-[768px]:text-[36px]!">
+              <?= get_the_title( $post->ID ); ?>
+            </h3>
             <div class="mb-[22px]"></div>
             <div class="font-light! text-lg! max-[768px]:text-sm!" text-limit="2">
               <?= esc_html( wp_trim_words( get_the_excerpt( $post->ID ), 20 ) ); ?>
