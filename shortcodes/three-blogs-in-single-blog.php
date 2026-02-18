@@ -80,7 +80,6 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
   ob_start();
   ?>
   <style>
-
   </style>
   <div class="single-blog-cogcpa-blog-cards">
     <div class="single-blog-cogcpa-blog-cards__grid">
@@ -89,6 +88,9 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
         echo cogcpamedia_render_blog_card_three_blogs( $post_obj->ID, $atts['image_size'] );
       }
       ?>
+    </div>
+    <div class="pl-[40px] btn_primary">
+      <a href="/insights" class="">Explore More</a>
     </div>
   </div>
   <?php
