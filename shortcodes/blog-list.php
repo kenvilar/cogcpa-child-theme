@@ -152,8 +152,8 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
             <?php
             endforeach; ?>
           </div>
-          <div class="cogcpa-blog-cards__search">
-            <input type="text" class="cogcpa-blog-cards__search-input" placeholder="Search posts..."/>
+          <div class="cogcpa-blog-cards__search max-w-[366px] w-full">
+            <input type="text" class="cogcpa-blog-cards__search-input" placeholder="Search..."/>
           </div>
         </div>
       </div>
