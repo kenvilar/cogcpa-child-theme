@@ -35,8 +35,9 @@ function cogcpamedia_render_blog_card( $post_id, $image_size = 'large' ) {
         </span>
       |
       <?php
-      if ( ! empty( $cat_name ) ) : ?>
-        <span class="cogcpa-blog-card__category"><?= esc_html( $cat_name ); ?></span>
+      if ( ! empty( $cats ) ) :
+        $cat_names = wp_list_pluck( $cats, 'name' ); ?>
+        <span class="cogcpa-blog-card__category"><?= esc_html( implode( ', ', $cat_names ) ); ?></span>
       <?php
       endif; ?>
     </div>
