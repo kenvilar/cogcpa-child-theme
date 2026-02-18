@@ -36,3 +36,13 @@ function cogcpa_custom_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cogcpa_custom_styles', 11 );
 add_action( 'wp_enqueue_scripts', 'cogcpa_custom_scripts' );
+
+// Load Finsweet Attributes (social share) on single blog posts only
+add_action( 'wp_head', function () {
+  if ( is_singular( 'post' ) ) {
+    ?>
+    <!-- [Attributes by Finsweet] Social Share -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js"></script>
+    <?php
+  }
+}, 1 );
