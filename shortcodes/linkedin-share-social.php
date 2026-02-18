@@ -1,12 +1,4 @@
 <?php
-/*
-	http://stackoverflow.com/questions/12448134/social-share-links-with-custom-icons
-	http://petragregorova.com/articles/social-share-buttons-with-custom-icons
-
-	wp_enqueue_style('fontAwesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0', 'all');
-
-	use in template files:: <?php echo do_shortcode('[social_sharing]') ; ?>
-*/
 
 function social_linkedin_sharing() {
   extract( shortcode_atts( array(), $atts ) );
@@ -24,4 +16,3 @@ function social_linkedin_sharing() {
 }
 
 add_shortcode( "social_linkedin_sharing", "social_linkedin_sharing" );
-?>
