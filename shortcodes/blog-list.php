@@ -134,24 +134,28 @@ function cogcpamedia_blog_cards_shortcode( $atts ) {
     data-loaded="<?php
     echo esc_attr( count( $posts_to_render ) ); ?>"
   >
-    <div class="cogcpa-blog-cards__controls">
-      <div class="cogcpa-blog-cards__search">
-        <input type="text" class="cogcpa-blog-cards__search-input" placeholder="Search posts..."/>
-      </div>
-      <div class="cogcpa-blog-cards__categories">
-        <button type="button" class="cogcpa-blog-cards__cat is-active" data-cat="0">All</button>
-        <?php
-        foreach ( $categories as $cat ) : ?>
-          <button type="button"
-                  class="cogcpa-blog-cards__cat"
-                  data-cat="<?php
-                  echo esc_attr( intval( $cat->term_id ) ); ?>"
-          >
+    <div class="cogcpa-blog-cards__controls site-padding pt-[21px] pb-[14px]">
+      <div class="max-w-[1236px] mx-auto">
+        <div class="flex items-center justify-between">
+          <div class="cogcpa-blog-cards__categories">
+            <button type="button" class="cogcpa-blog-cards__cat is-active" data-cat="0">All</button>
             <?php
-            echo esc_html( $cat->name ); ?>
-          </button>
-        <?php
-        endforeach; ?>
+            foreach ( $categories as $cat ) : ?>
+              <button type="button"
+                      class="cogcpa-blog-cards__cat"
+                      data-cat="<?php
+                      echo esc_attr( intval( $cat->term_id ) ); ?>"
+              >
+                <?php
+                echo esc_html( $cat->name ); ?>
+              </button>
+            <?php
+            endforeach; ?>
+          </div>
+          <div class="cogcpa-blog-cards__search">
+            <input type="text" class="cogcpa-blog-cards__search-input" placeholder="Search posts..."/>
+          </div>
+        </div>
       </div>
     </div>
     <div class="cogcpa-blog-cards__grid">
