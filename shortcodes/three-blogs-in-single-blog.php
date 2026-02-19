@@ -109,7 +109,7 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
 					object-fit: cover;
 				}
 				.cogcpa-blog-card__meta {
-					font-size: 11px;
+					font-size: 11.97px;
 					line-height: normal;
 					font-weight: 400;
 					color: var(--cogcpa-blue);
