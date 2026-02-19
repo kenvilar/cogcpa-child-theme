@@ -60,7 +60,7 @@ add_shortcode( 'partner_form_section', function () {
                                     data-vce-do-apply="border padding background  el-d8a4e8a8"></div>
                                 </div>
                                 <div
-                                  class="vce vce-separator-container vce-separator--align-center vce-separator--style-solid"
+                                  class="vce vce-separator-container vce-separator--align-center vce-separator--style-solid h-[1px] bg-darkblue"
                                   id="el-82fcf657" data-vce-do-apply="margin el-82fcf657">
                                   <div
                                     class="vce-separator vce-separator--color-b-30-51-72 vce-separator--width-100 vce-separator--thickness-1"
