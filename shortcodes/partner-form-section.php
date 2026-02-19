@@ -163,7 +163,7 @@ add_shortcode( 'partner_form_section', function () {
                                                                       </div>
                                                                     </div>
                                                                     <div class="vce-text-block p [&amp;_*]:font-light">
-                                                                      <div class="vce-text-block-wrapper vce"
+                                                                      <div class="vce-text-block-wrapper vce mb-[0]!"
                                                                            id="el-f526fd0b"
                                                                            data-vce-do-apply="all el-f526fd0b">
                                                                         <p
@@ -206,7 +206,7 @@ add_shortcode( 'partner_form_section', function () {
                                                                       </div>
                                                                     </div>
                                                                     <div class="vce-text-block p [&amp;_*]:font-light">
-                                                                      <div class="vce-text-block-wrapper vce"
+                                                                      <div class="vce-text-block-wrapper vce mb-[0]!"
                                                                            id="el-ceb02dea"
                                                                            data-vce-do-apply="all el-ceb02dea">
                                                                         <p
