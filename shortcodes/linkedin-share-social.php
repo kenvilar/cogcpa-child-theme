@@ -5,6 +5,7 @@ function social_linkedin_sharing() {
 
   return '
   <a 
+    class="flex"
     target="_new" 
     href="http://www.linkedin.com/shareArticle?mini=true&url=' . urlencode( get_the_permalink() ) . '&title=' . urlencode( get_the_title() ) . '&source=' . get_bloginfo( "url" ) . '">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none">
