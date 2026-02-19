@@ -4,34 +4,33 @@ add_shortcode( 'partner_form_section', function () {
   ob_start(); ?>
   <div class="vce-section section [&amp;_&gt;div]:p-0! bg-lightgrey">
     <div class="vce-section-inner vce-section-no-paddings vce-element--has-background" data-vce-full-width="true"
-         data-vce-stretch-content="true" id="el-48d73d0a" data-vce-do-apply="all el-48d73d0a"
-         style="width: 1440px; left: 0px;">
+         data-vce-stretch-content="true" id="el-3adc50ab" data-vce-do-apply="all el-3adc50ab">
       <div class="vce-content-background-container"></div>
       <div data-vce-element-content="true">
         <div class="vce-row-container" data-vce-boxed-width="true">
           <div
             class="vce-row vce-row--col-gap-30 block! site-padding py-[75px]! sm:pt-[31px]! sm:pb-[26px]! vce-row-equal-height vce-row-content--top"
-            id="el-69456113" data-vce-do-apply="all el-69456113">
+            id="el-308f87ce" data-vce-do-apply="all el-308f87ce">
             <div class="vce-row-content" data-vce-element-content="true">
               <div
                 class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first block! max-w-[1236px]! mx-auto!"
-                id="el-0091a9cb">
-                <div class="vce-col-inner" data-vce-do-apply="border margin background  el-0091a9cb">
-                  <div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-0091a9cb">
+                id="el-22dddffe">
+                <div class="vce-col-inner" data-vce-do-apply="border margin background  el-22dddffe">
+                  <div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-22dddffe">
                     <div class="vce-row-container" data-vce-boxed-width="true">
                       <div
                         class="vce-row vce-row--col-gap-20 [&amp;_&gt;div]:justify-between! [&amp;_&gt;div]:gap-[20px]! max-[768px]:[&amp;_&gt;div]:gap-[30px]! vce-row-equal-height vce-row-content--top"
-                        id="el-06459937" data-vce-do-apply="all el-06459937">
+                        id="el-3756b215" data-vce-do-apply="all el-3756b215">
                         <div class="vce-row-content" data-vce-element-content="true">
                           <div
                             class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-first vce-col--lg-first vce-col--xl-first max-w-[448px]! sm:max-w-full!"
-                            id="el-e8e79e69">
-                            <div class="vce-col-inner" data-vce-do-apply="border margin background  el-e8e79e69">
+                            id="el-8e79cef5">
+                            <div class="vce-col-inner" data-vce-do-apply="border margin background  el-8e79cef5">
                               <div class="vce-col-content" data-vce-element-content="true"
-                                   data-vce-do-apply="padding el-e8e79e69">
+                                   data-vce-do-apply="padding el-8e79cef5">
                                 <div class="vce-text-block h2 max-[768px]:text-center max-[768px]:[&amp;_*]:text-lg!">
-                                  <div class="vce-text-block-wrapper vce" id="el-d32496fe"
-                                       data-vce-do-apply="all el-d32496fe">
+                                  <div class="vce-text-block-wrapper vce" id="el-d2beabfd"
+                                       data-vce-do-apply="all el-d2beabfd">
                                     <h2><span
                                         style="font-weight: 400; font-style: normal;">Partner with a team you can count on, year after year.</span>
                                     </h2>
@@ -39,15 +38,15 @@ add_shortcode( 'partner_form_section', function () {
                                 </div>
                                 <div
                                   class="vce vce-separator-container m-0! p-0! [&amp;_*]:p-0! [&amp;_*]:m-0! mb-[22px]! max-[768px]:mb-[17px]! vce-separator--align-center vce-separator--style-solid"
-                                  id="el-6741fe99" data-vce-do-apply="margin el-6741fe99">
+                                  id="el-b96ef450" data-vce-do-apply="margin el-b96ef450">
                                   <div
                                     class="vce-separator vce-separator--color-ba-0-0-0-0 vce-separator--width-100 vce-separator--thickness-0"
-                                    data-vce-do-apply="border padding background  el-6741fe99"></div>
+                                    data-vce-do-apply="border padding background  el-b96ef450"></div>
                                 </div>
                                 <div
                                   class="vce-text-block p [&amp;_]:font-light max-[768px]:text-center max-[768px]:[&amp;_*]:text-sm!">
-                                  <div class="vce-text-block-wrapper vce" id="el-705aa878"
-                                       data-vce-do-apply="all el-705aa878">
+                                  <div class="vce-text-block-wrapper vce" id="el-f9071a48"
+                                       data-vce-do-apply="all el-f9071a48">
                                     <p><span
                                         style="font-weight: inherit; font-style: inherit;">We’re here to serve you as your partner. To get started, fill out this form, and we’ll be in touch with you soon.</span>
                                     </p>
@@ -55,66 +54,66 @@ add_shortcode( 'partner_form_section', function () {
                                 </div>
                                 <div
                                   class="vce vce-separator-container m-0! p-0! [&amp;_*]:p-0! [&amp;_*]:m-0! mb-[50px]! max-[768px]:mb-[25px]! vce-separator--align-center vce-separator--style-solid"
-                                  id="el-040a7335" data-vce-do-apply="margin el-040a7335">
+                                  id="el-d8a4e8a8" data-vce-do-apply="margin el-d8a4e8a8">
                                   <div
                                     class="vce-separator vce-separator--color-ba-0-0-0-0 vce-separator--width-100 vce-separator--thickness-0"
-                                    data-vce-do-apply="border padding background  el-040a7335"></div>
+                                    data-vce-do-apply="border padding background  el-d8a4e8a8"></div>
                                 </div>
                                 <div
                                   class="vce vce-separator-container vce-separator--align-center vce-separator--style-solid"
-                                  id="el-efee06bd" data-vce-do-apply="margin el-efee06bd">
+                                  id="el-82fcf657" data-vce-do-apply="margin el-82fcf657">
                                   <div
                                     class="vce-separator vce-separator--color-b-30-51-72 vce-separator--width-100 vce-separator--thickness-1"
-                                    data-vce-do-apply="border padding background  el-efee06bd"></div>
+                                    data-vce-do-apply="border padding background  el-82fcf657"></div>
                                 </div>
                                 <div
                                   class="vce vce-separator-container m-0! p-0! [&amp;_*]:p-0! [&amp;_*]:m-0! mb-[50px]! max-[768px]:mb-[30px]! vce-separator--align-center vce-separator--style-solid"
-                                  id="el-7f2fa047" data-vce-do-apply="margin el-7f2fa047">
+                                  id="el-4cd35597" data-vce-do-apply="margin el-4cd35597">
                                   <div
                                     class="vce-separator vce-separator--color-ba-0-0-0-0 vce-separator--width-100 vce-separator--thickness-0"
-                                    data-vce-do-apply="border padding background  el-7f2fa047"></div>
+                                    data-vce-do-apply="border padding background  el-4cd35597"></div>
                                 </div>
                                 <div class="vce-text-block [&amp;_]:text-md max-[768px]:text-center">
-                                  <div class="vce-text-block-wrapper vce" id="el-abd3ed18"
-                                       data-vce-do-apply="all el-abd3ed18">
+                                  <div class="vce-text-block-wrapper vce" id="el-0851e4d7"
+                                       data-vce-do-apply="all el-0851e4d7">
                                     <p>Lincolnshire Office</p>
                                   </div>
                                 </div>
                                 <div
                                   class="vce vce-separator-container m-0! p-0! [&amp;_*]:p-0! [&amp;_*]:m-0! mb-[15px]! vce-separator--align-center vce-separator--style-solid"
-                                  id="el-f81dc2f5" data-vce-do-apply="margin el-f81dc2f5">
+                                  id="el-aae86f0c" data-vce-do-apply="margin el-aae86f0c">
                                   <div
                                     class="vce-separator vce-separator--color-ba-0-0-0-0 vce-separator--width-100 vce-separator--thickness-0"
-                                    data-vce-do-apply="border padding background  el-f81dc2f5"></div>
+                                    data-vce-do-apply="border padding background  el-aae86f0c"></div>
                                 </div>
                                 <div class="vce-row-container" data-vce-boxed-width="true">
                                   <div
                                     class="vce-row vce-row--col-gap-30 max-w-[368px]! w-full! md:max-w-full! vce-row-equal-height vce-row-content--top"
-                                    id="el-81f6e1f0" data-vce-do-apply="all el-81f6e1f0">
+                                    id="el-ad3dddcc" data-vce-do-apply="all el-ad3dddcc">
                                     <div class="vce-row-content" data-vce-element-content="true">
                                       <div
                                         class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first"
-                                        id="el-f2f696d7">
+                                        id="el-46e2a787">
                                         <div class="vce-col-inner"
-                                             data-vce-do-apply="border margin background  el-f2f696d7">
+                                             data-vce-do-apply="border margin background  el-46e2a787">
                                           <div class="vce-col-content" data-vce-element-content="true"
-                                               data-vce-do-apply="padding el-f2f696d7">
+                                               data-vce-do-apply="padding el-46e2a787">
                                             <div class="vce-row-container" data-vce-boxed-width="true">
                                               <div
                                                 class="vce-row vce-row--col-gap-0 [&amp;_&gt;div]:flex! [&amp;_&gt;div]:flex-row! [&amp;_&gt;div]:justify-between! [&amp;_&gt;div]:md:gap-[20px]! [&amp;_&gt;div]:xs:flex-col! vce-row-equal-height vce-row-content--top"
-                                                id="el-e926b901" data-vce-do-apply="all el-e926b901">
+                                                id="el-5e014acb" data-vce-do-apply="all el-5e014acb">
                                                 <div class="vce-row-content" data-vce-element-content="true">
                                                   <div
                                                     class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-first vce-col--lg-first vce-col--xl-first max-w-[187px]! w-full! md:max-w-full! max-[768px]:text-center"
-                                                    id="el-1bfe5ba8">
+                                                    id="el-123ea3e2">
                                                     <div class="vce-col-inner"
-                                                         data-vce-do-apply="border margin background  el-1bfe5ba8">
+                                                         data-vce-do-apply="border margin background  el-123ea3e2">
                                                       <div class="vce-col-content" data-vce-element-content="true"
-                                                           data-vce-do-apply="padding el-1bfe5ba8">
+                                                           data-vce-do-apply="padding el-123ea3e2">
                                                         <div
                                                           class="vce-text-block p [&amp;_]:font-light [&amp;_]:text-base!">
-                                                          <div class="vce-text-block-wrapper vce" id="el-7facb47e"
-                                                               data-vce-do-apply="all el-7facb47e">
+                                                          <div class="vce-text-block-wrapper vce" id="el-f1f48ad7"
+                                                               data-vce-do-apply="all el-f1f48ad7">
                                                             <p>Michael Coglianese
                                                               CPA, P.C. &ZeroWidthSpace;<br>
                                                               300 Tri State
@@ -130,30 +129,30 @@ add_shortcode( 'partner_form_section', function () {
                                                   </div>
                                                   <div
                                                     class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last max-w-[142px]! w-full! md:max-w-full! max-[768px]:[&amp;_&gt;div&gt;div]:flex max-[768px]:[&amp;_&gt;div&gt;div]:justify-center! max-[768px]:[&amp;_&gt;div&gt;div]:gap-[30px]! max-[768px]:[&amp;_&gt;div]:max-w-[257px]! max-[800px]:[&amp;_&gt;div]:mx-auto! max-[290px]:[&amp;_&gt;div&gt;div]:flex-wrap! max-[290px]:[&amp;_&gt;div&gt;div]:gap-0!"
-                                                    id="el-a5df15ef">
+                                                    id="el-867f2553">
                                                     <div class="vce-col-inner"
-                                                         data-vce-do-apply="border margin background  el-a5df15ef">
+                                                         data-vce-do-apply="border margin background  el-867f2553">
                                                       <div class="vce-col-content" data-vce-element-content="true"
-                                                           data-vce-do-apply="padding el-a5df15ef">
+                                                           data-vce-do-apply="padding el-867f2553">
                                                         <div class="vce-row-container" data-vce-boxed-width="true">
                                                           <div
                                                             class="vce-row vce-row--col-gap-30 mb-[9px] vce-row-equal-height vce-row-content--top"
-                                                            id="el-732973e5" data-vce-do-apply="all el-732973e5">
+                                                            id="el-2afc33ea" data-vce-do-apply="all el-2afc33ea">
                                                             <div class="vce-row-content"
                                                                  data-vce-element-content="true">
                                                               <div
                                                                 class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first js-redirect-block [&amp;_div]:flex! [&amp;_div]:flex-row! [&amp;_div]:items-center! cursor-pointer!"
                                                                 data-href="tel:6303514005" data-target="_blank"
-                                                                id="el-a317669b">
+                                                                id="el-15045a06">
                                                                 <div class="vce-col-inner"
-                                                                     data-vce-do-apply="border margin background  el-a317669b">
+                                                                     data-vce-do-apply="border margin background  el-15045a06">
                                                                   <div class="vce-col-content"
                                                                        data-vce-element-content="true"
-                                                                       data-vce-do-apply="padding el-a317669b">
+                                                                       data-vce-do-apply="padding el-15045a06">
                                                                     <div
                                                                       class="vce-raw-html [&amp;_]:m-0! [&amp;_]:p-0! [&amp;_]:mr-[9px]!">
-                                                                      <div class="vce-raw-html-wrapper" id="el-fddfd164"
-                                                                           data-vce-do-apply="all el-fddfd164">
+                                                                      <div class="vce-raw-html-wrapper" id="el-59d5f1d0"
+                                                                           data-vce-do-apply="all el-59d5f1d0">
                                                                         <svg width="16" height="16" viewBox="0 0 16 16"
                                                                              fill="none"
                                                                              xmlns="http://www.w3.org/2000/svg">
@@ -165,8 +164,8 @@ add_shortcode( 'partner_form_section', function () {
                                                                     </div>
                                                                     <div class="vce-text-block p [&amp;_*]:font-light">
                                                                       <div class="vce-text-block-wrapper vce"
-                                                                           id="el-fa33b08f"
-                                                                           data-vce-do-apply="all el-fa33b08f">
+                                                                           id="el-f526fd0b"
+                                                                           data-vce-do-apply="all el-f526fd0b">
                                                                         <p
                                                                           style="line-height: inherit;">630.351.4005
                                                                         </p>
@@ -181,22 +180,22 @@ add_shortcode( 'partner_form_section', function () {
                                                         <div class="vce-row-container" data-vce-boxed-width="true">
                                                           <div
                                                             class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top"
-                                                            id="el-379f34ed" data-vce-do-apply="all el-379f34ed">
+                                                            id="el-adcdc87f" data-vce-do-apply="all el-adcdc87f">
                                                             <div class="vce-row-content"
                                                                  data-vce-element-content="true">
                                                               <div
                                                                 class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first js-redirect-block [&amp;_div]:flex! [&amp;_div]:flex-row! [&amp;_div]:items-center! cursor-pointer!"
                                                                 data-href="mailto:info@cogcpa.com" data-target="_blank"
-                                                                id="el-13d13dcd">
+                                                                id="el-23d03bdc">
                                                                 <div class="vce-col-inner"
-                                                                     data-vce-do-apply="border margin background  el-13d13dcd">
+                                                                     data-vce-do-apply="border margin background  el-23d03bdc">
                                                                   <div class="vce-col-content"
                                                                        data-vce-element-content="true"
-                                                                       data-vce-do-apply="padding el-13d13dcd">
+                                                                       data-vce-do-apply="padding el-23d03bdc">
                                                                     <div
                                                                       class="vce-raw-html [&amp;_]:m-0! [&amp;_]:p-0! [&amp;_]:mr-[9px]!">
-                                                                      <div class="vce-raw-html-wrapper" id="el-9ae0c8e8"
-                                                                           data-vce-do-apply="all el-9ae0c8e8">
+                                                                      <div class="vce-raw-html-wrapper" id="el-96135133"
+                                                                           data-vce-do-apply="all el-96135133">
                                                                         <svg width="16" height="12" viewBox="0 0 16 12"
                                                                              fill="none"
                                                                              xmlns="http://www.w3.org/2000/svg">
@@ -208,8 +207,8 @@ add_shortcode( 'partner_form_section', function () {
                                                                     </div>
                                                                     <div class="vce-text-block p [&amp;_*]:font-light">
                                                                       <div class="vce-text-block-wrapper vce"
-                                                                           id="el-0b2fdfb4"
-                                                                           data-vce-do-apply="all el-0b2fdfb4">
+                                                                           id="el-ceb02dea"
+                                                                           data-vce-do-apply="all el-ceb02dea">
                                                                         <p
                                                                           style="line-height: inherit;">info@cogcpa.com
                                                                         </p>
@@ -238,47 +237,26 @@ add_shortcode( 'partner_form_section', function () {
                           </div>
                           <div
                             class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last max-w-[628px]! sm:max-w-full!"
-                            id="el-660adb04">
-                            <div class="vce-col-inner" data-vce-do-apply="border margin background  el-660adb04">
+                            id="el-e35c5fe7">
+                            <div class="vce-col-inner" data-vce-do-apply="border margin background  el-e35c5fe7">
                               <div class="vce-col-content" data-vce-element-content="true"
-                                   data-vce-do-apply="padding el-660adb04">
+                                   data-vce-do-apply="padding el-e35c5fe7">
                                 <div class="vce-raw-html m-0! p-0!">
-                                  <div class="vce-raw-html-wrapper" id="el-ee648451"
-                                       data-vce-do-apply="all el-ee648451">
+                                  <div class="vce-raw-html-wrapper" id="el-ceb3d006"
+                                       data-vce-do-apply="all el-ceb3d006">
                                     <!-- HubSpot Form Embed Code -->
-                                    <script charset="utf-8" type="text/javascript"
-                                            src="//js.hsforms.net/forms/v2.js"></script>
-                                    <script data-hubspot-rendered="true">
+                                    <script
+                                      charset="utf-8"
+                                      type="text/javascript"
+                                      src="//js.hsforms.net/forms/v2.js"
+                                    ></script>
+                                    <script>
 																			hbspt.forms.create({
 																				region: "na1", // Or your region
 																				portalId: "6516820", // This should match the portal ID from the error
 																				formId: "3018174c-2d5a-40a9-8ea9-2dc7aa5571cf", // This should match the form GUID from the error
 																			});
                                     </script>
-                                    <div id="hbspt-form-b199df50-1b3b-48c0-a6d3-968e8f45b019" class="hbspt-form"
-                                         data-hs-forms-root="true">
-                                      <iframe id="hs-form-iframe-0" class="hs-form-iframe" title="Form 0" scrolling="no"
-                                              width="100%"
-                                              style="position: static; border: none; display: block; overflow: hidden; width: 100%; height: 1382px;"
-                                              height="1382"></iframe>
-                                      <div id="hs-outer-captcha-target-0"
-                                           style="display: none; width: 0px; height: 0px;">
-                                        <div class="grecaptcha-badge" data-style="inline"
-                                             style="width: 256px; height: 60px; box-shadow: gray 0px 0px 5px;">
-                                          <div class="grecaptcha-logo">
-                                            <iframe title="reCAPTCHA" width="256" height="60" role="presentation"
-                                                    name="a-nef6mvfdlhld" frameborder="0" scrolling="no"
-                                                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                                                    src="https://www.google.com/recaptcha/enterprise/anchor?ar=1&amp;k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&amp;co=aHR0cHM6Ly9jb2djcGFkZXYud3BlbmdpbmVwb3dlcmVkLmNvbTo0NDM.&amp;hl=en&amp;v=vUgXt_KV952_-5BB2jjloYzl&amp;size=invisible&amp;badge=inline&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=omn4d7fi1s40"></iframe>
-                                          </div>
-                                          <div class="grecaptcha-error"></div>
-                                          <textarea id="g-recaptcha-response" name="g-recaptcha-response"
-                                                    class="g-recaptcha-response"
-                                                    style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                                        </div>
-                                        <iframe style="display: none;"></iframe>
-                                      </div>
-                                    </div>
                                     <script>
 																			window.onload = function () {
 																				function applyStylesToIframe(iframe) {
