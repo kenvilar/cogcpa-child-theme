@@ -26,16 +26,6 @@ $month = get_the_date( 'F', $post->ID );
 $day   = get_the_date( 'd', $post->ID );
 ?>
   <style>
-    .the_content {
-      line-height: normal !important;
-      p, span {
-	      font-weight: 300 !important;
-      }
-      a, a span {
-        color: var(--cogcpa-blue);
-        font-weight: 600 !important;
-      }
-    }
 		.single-blog-post {
 			--side: max(32px, calc((100vw - 1236px) / 2));
       color: var(--cogcpa-dark-blue);
