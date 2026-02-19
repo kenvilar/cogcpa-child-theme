@@ -91,6 +91,9 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
 				&:not(:last-child) {
 					border-bottom: 1px solid var(--cogcpa-dark-blue);
 				}
+        &:last-child {
+          padding-bottom: 20px;
+        }
 				&:hover {
 					background: var(--cogcpa-light-grey) !important;
 				}
@@ -135,6 +138,11 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
 				}
 			}
 		}
+    @media screen and (max-width: 767px) {
+      .single-blog-first-column, .cogcpa-blog-card {
+        padding-inline: 20px !important;
+      }
+    }
   </style>
   <div class="single-blog-cogcpa-blog-cards">
     <div class="single-blog-cogcpa-blog-cards__grid">
@@ -144,8 +152,8 @@ function cogcpamedia_blog_cards_shortcode_three_blogs( $atts ) {
       }
       ?>
     </div>
-    <div class="pl-[40px] btn_primary">
-      <a href="/insights" class="">Explore More</a>
+    <div class="pt-[20px] px-[40px] max-[768px]:px-[20px] btn_primary">
+      <a href="/insights" class="inline-block">Explore More</a>
     </div>
   </div>
   <?php
