@@ -26,8 +26,19 @@ $month = get_the_date( 'F', $post->ID );
 $day   = get_the_date( 'd', $post->ID );
 ?>
   <style>
+    .the_content {
+      line-height: normal !important;
+      p, span {
+	      font-weight: 300 !important;
+      }
+      a, a span {
+        color: var(--cogcpa-blue);
+        font-weight: 600 !important;
+      }
+    }
 		.single-blog-post {
 			--side: max(32px, calc((100vw - 1236px) / 2));
+      color: var(--cogcpa-dark-blue);
 		}
 		.single-blog-post-img {
 			position: absolute;
@@ -97,10 +108,11 @@ $day   = get_the_date( 'd', $post->ID );
     <div class="single-blog-post-img-overlay"></div>
   </section>
   <div class="single-blog-post" style="background-color: white">
-    <div class="flex justify-between">
+    <div class="flex justify-between max-[992px]:flex-col">
       <div class="single-blog-first-column">
+        <div class="mb-[54px]"></div>
         <div class="flex gap-[28px] items-center">
-          <a href="/insights" class="flex gap-[12px] items-center text-inherit! text-reg font-semibold tracking-[1.28px]">
+          <a href="/insights" class="flex gap-[12px] items-center text-darkblue! text-[16px] leading-[normal] font-semibold tracking-[1.28px]">
             <div class="flex">
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
                 <path d="M0.23406 8.00465C-0.0780185 7.64472 -0.0780184 7.06271 0.234061 6.70661L5.81164 0.269968C6.12372 -0.0899628 6.62836 -0.0899628 6.93712 0.269968C7.24588 0.629899 7.2492 1.21192 6.93712 1.56802L2.72073 6.43474L16.2032 6.43475C16.6448 6.43475 17 6.84445 17 7.35372C17 7.86298 16.6448 8.27269 16.2032 8.27269L2.72073 8.27269L6.94044 13.1356C7.25252 13.4955 7.25251 14.0775 6.94044 14.4336C6.62836 14.7897 6.12372 14.7936 5.81496 14.4336L0.23406 8.00465Z" fill="#017BB1"/>
@@ -108,15 +120,36 @@ $day   = get_the_date( 'd', $post->ID );
             </div>
             <div class="">BACK</div>
           </a>
-          <div>
+          <div class="flex">
             <?= do_shortcode('[social_linkedin_sharing]') ?>
           </div>
         </div>
-        <?php
-        the_content(); ?>
+        <div class="mb-[54px]"></div>
+        <div class="the_content">
+          <div class="max-w-[805px] w-full max-[992px]:max-w-full pr-[20px] max-[992px]:pr-0">
+            <?php
+            the_content(); ?>
+          </div>
+        </div>
+        <div class="mb-[30px]"></div>
+        <div class="flex gap-[28px] items-center">
+          <a href="/insights" class="flex gap-[12px] items-center text-darkblue! text-[16px] leading-[normal] font-semibold tracking-[1.28px]">
+            <div class="flex">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
+                <path d="M0.23406 8.00465C-0.0780185 7.64472 -0.0780184 7.06271 0.234061 6.70661L5.81164 0.269968C6.12372 -0.0899628 6.62836 -0.0899628 6.93712 0.269968C7.24588 0.629899 7.2492 1.21192 6.93712 1.56802L2.72073 6.43474L16.2032 6.43475C16.6448 6.43475 17 6.84445 17 7.35372C17 7.86298 16.6448 8.27269 16.2032 8.27269L2.72073 8.27269L6.94044 13.1356C7.25252 13.4955 7.25251 14.0775 6.94044 14.4336C6.62836 14.7897 6.12372 14.7936 5.81496 14.4336L0.23406 8.00465Z" fill="#017BB1"/>
+              </svg>
+            </div>
+            <div class="">BACK</div>
+          </a>
+          <div class="flex btn_primary">
+            <a href="/contact-us" class="">CONTACT US</a>
+          </div>
+        </div>
+        <div class="mb-[40px]"></div>
       </div>
       <div class="single-blog-second-column">
-
+        <?= do_shortcode('[cogcpa_blog_cards_three_blogs_only]'); ?>
+        <div class="mb-[40px]"></div>
       </div>
     </div>
   </div>
