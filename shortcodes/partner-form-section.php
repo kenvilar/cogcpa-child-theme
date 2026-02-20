@@ -296,6 +296,23 @@ add_shortcode( 'partner_form_section', function () {
               select option[value=""] {
               	display: none;
               }
+              .hs-fieldtype-select .input {
+                position: relative;
+              }
+              .hs-fieldtype-select .input::after {
+                content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="rgb(1 123 177)" d="M169.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 306.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>');
+                width: 11px;
+                height: 100%;
+                position: absolute;
+                right: 20px;
+                top: calc(50% + 15px);
+                bottom: 0;
+                margin: auto !important;
+              }
+              .hs-custom-style select {
+                appearance: none;
+                position: relative;
+              }
               [role="checkbox"] label {
               	font-size: 15px !important;
               }
